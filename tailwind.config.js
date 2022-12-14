@@ -39,7 +39,7 @@ module.exports = {
         590: '590px',
       },
       backgroundImage: {
-        'hero-pattern': "url('https://i.ibb.co/MkvLDfb/Rectangle-4389.png')",
+        'hero-pattern': "url('https://img.freepik.com/free-vector/people-work-with-business-analytic-data_107791-10413.jpg?w=740&t=st=1671012761~exp=1671013361~hmac=aeb37baababe21e0a6679be089051b59be5920d1480bc5bf99dd96ca86eef89c')",
       },
     },
   },

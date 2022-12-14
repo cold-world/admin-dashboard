@@ -3204,8 +3204,8 @@ export const stackedPrimaryXAxis = {
   minorTickLines: { width: 0 },
   interval: 1,
   lineStyle: { width: 0 },
-  labelIntersectAction: 'Rotate45',
-  valueType: 'Category',
+  // labelIntersectAction: 'Rotate45',
+  // valueType: 'Category',
 };
 
 export const stackedPrimaryYAxis = {

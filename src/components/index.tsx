@@ -1,4 +1,4 @@
-export * from './Card';
+export * from './EcommerceHeroCard';
 export * from './Button';
 export * from './ChartsHeader';
 export * from './Chat';

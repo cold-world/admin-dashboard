@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-type Props = {}
+type Props = {};
 
 export const Kanban = (props: Props) => {
-  return (
-    <div>Kanban</div>
-  )
-}
+  return <div>Kanban</div>;
+};
