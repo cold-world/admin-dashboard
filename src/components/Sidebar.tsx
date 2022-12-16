@@ -7,16 +7,14 @@ import { useStateContext } from '../contexts/ContextProvider';
 import { IconType } from 'react-icons/lib';
 import { links } from '../data/dummy';
 
-
 type Props = {};
 
-export const Sidebar = (props: Props) => {
-  const { activeMenu, setActiveMenu } = useStateContext();
+export const Sidebar = (props: Props): JSX.Element => {
+  const { activeMenu, setActiveMenu, currentColor } = useStateContext();
   const closeSidebarForMobile = () => {
     if (window.innerWidth <= 900) setActiveMenu(false);
   };
-  const activeLink =
-    'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-white text-md m-2 bg-blue capitalize';
+  const activeLink = `flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-white text-md m-2 bg-blue capitalize`;
   const normalLink =
     'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md text-gray-700 dark:text-gray-200 dark:hover:text-black capitalize hover:bg-light-gray m-2';
   return (
@@ -48,6 +46,7 @@ export const Sidebar = (props: Props) => {
                 <h4 className='text-gray-400 m-3 uppercase'>{link.title}</h4>
                 {link.links.map((item) => (
                   <NavLink
+                    style={({ isActive }) => ({ backgroundColor: isActive ? currentColor : '' })}
                     onClick={closeSidebarForMobile}
                     key={item.name}
                     className={({ isActive }) => (isActive ? activeLink : normalLink)}

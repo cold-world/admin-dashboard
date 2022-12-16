@@ -7,15 +7,22 @@ import { useStateContext } from '../contexts/ContextProvider';
 
 type Props = {};
 
-export const Ecommerce = (props: Props) => {
+export const Ecommerce = (props: Props): JSX.Element => {
+  const { currentColor } = useStateContext();
   return (
     <div className='md:mt-5 mt-16'>
       <div className='flex flex-wrap lg:flex-nowrap justify-center'>
         <div className='p-8'>
           <p className='font-bold text-gray-400'>Earnings</p>
-          <p className='text-2xl'>$63,448.78</p>
+          <p className='text-2xl dark:text-white'>$63,448.78</p>
           <div className='mt-3'>
-            <Button bgColor='blue' text='Download' borderRadius='10px' size='md' color='white' />
+            <Button
+              bgColor={currentColor}
+              text='Download'
+              borderRadius='10px'
+              size='md'
+              color='white'
+            />
           </div>
         </div>
         <div
@@ -75,7 +82,7 @@ export const Ecommerce = (props: Props) => {
               </div>
               <div className='mt-5'>
                 <SparkLine
-                  currentColor='blue'
+                  currentColor={currentColor}
                   id='sparkline'
                   type='Line'
                   heigth='80px'
@@ -87,7 +94,7 @@ export const Ecommerce = (props: Props) => {
               <div className='mt-10'>
                 <Button
                   color='white'
-                  bgColor='blue'
+                  bgColor={currentColor}
                   borderRadius='10px'
                   text='Download'
                   size='md'
@@ -95,7 +102,7 @@ export const Ecommerce = (props: Props) => {
               </div>
             </div>
             <div>
-              <Stacked width='320px' heigth='360'/>
+              <Stacked width='320px' heigth='360' />
             </div>
           </div>
         </div>

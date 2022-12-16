@@ -8,7 +8,7 @@ type ButtonProps = {
   size: string;
 };
 
-export const Button = ({ color, bgColor, borderRadius, size, text }: ButtonProps) => {
+export const Button = ({ color, bgColor, borderRadius, size, text }: ButtonProps): JSX.Element => {
   return (
     <button
       style={{ backgroundColor: bgColor, borderRadius, color }}

@@ -55,33 +55,34 @@ export const Navbar = (props: Props) => {
     setActiveChat,
     setActiveNotification,
     setActiveUserProfile,
+    currentColor,
   } = useStateContext();
   return (
     <nav className='flex justify-between p-2 md:mx-6 relative'>
       <NavButton
         name='Menu'
         children={<AiOutlineMenu />}
-        color='blue'
+        color= {currentColor}
         someFunction={() => setActiveMenu((prev) => !prev)}
       />
       <div className='flex items-center gap-3'>
         <NavButton
           name='Cart'
           children={<FiShoppingCart />}
-          color='blue'
+          color={currentColor}
           someFunction={() => setActiveCart((prev) => !prev)}
         />
         <NavButton
           name='Chat'
           children={<BsChatLeft />}
-          color='blue'
+          color={currentColor}
           someFunction={() => setActiveChat((prev) => !prev)}
           dotColor='#03C9D7'
         />
         <NavButton
           name='Notification'
           children={<RiNotification3Line />}
-          color='blue'
+          color={currentColor}
           someFunction={() => setActiveNotification((prev) => !prev)}
           dotColor='#FEC90F'
         />

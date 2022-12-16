@@ -18,7 +18,7 @@ import { Header } from '../components';
 
 type Props = {};
 
-export const Orders = (props: Props) => {
+export const Orders = (props: Props): JSX.Element => {
   return (
     <div className='m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl'>
       <Header category='Page' title='Orders' />

@@ -19,7 +19,7 @@ export const SparkLine = ({
   heigth,
   type,
   width,
-}: SparklineProps) => {
+}: SparklineProps): JSX.Element => {
   return (
     <SparklineComponent
       id={id}

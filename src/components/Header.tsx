@@ -6,7 +6,7 @@ type HeaderProps = {
   title: string;
 };
 
-export const Header = ({category, title}: HeaderProps) => {
+export const Header = ({category, title}: HeaderProps): JSX.Element => {
   return (
     <div className='mb-7'>
       <p className='text-gray-400'>{category}</p>

@@ -1,35 +1,45 @@
 import React, { createContext, ReactNode, useContext, useState } from 'react';
 
+type Mode = 'Ligth' | 'Dark';
+
 interface IInitialState {
+  themeSettings: boolean;
+  currentMode: Mode;
+  currentColor: string;
   activeChat: boolean;
   activeCart: boolean;
   activeUserProfile: boolean;
   activeNotification: boolean;
   activeMenu: boolean;
-  windowSize: undefined | number;
   setActiveChat: React.Dispatch<React.SetStateAction<boolean>>;
   setActiveCart: React.Dispatch<React.SetStateAction<boolean>>;
   setActiveUserProfile: React.Dispatch<React.SetStateAction<boolean>>;
   setActiveNotification: React.Dispatch<React.SetStateAction<boolean>>;
   setActiveMenu: React.Dispatch<React.SetStateAction<boolean>>;
-  setWindowSize: React.Dispatch<React.SetStateAction<undefined | number>>;
+  setCurrentColor: React.Dispatch<React.SetStateAction<string>>;
+  setCurrentMode: React.Dispatch<React.SetStateAction<Mode>>;
+  setMode: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  setThemeSettings: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const initialState: IInitialState = {
+  themeSettings: false,
+  currentMode: 'Ligth',
+  currentColor: '#1A97F5',
   activeChat: false,
   activeCart: false,
   activeNotification: false,
   activeUserProfile: false,
   activeMenu: false,
-  windowSize: undefined,
   setActiveChat: () => {},
   setActiveCart: () => {},
   setActiveUserProfile: () => {},
   setActiveNotification: () => {},
   setActiveMenu: () => {},
-  setWindowSize: (): number | undefined => {
-    return;
-  },
+  setCurrentColor: () => {},
+  setCurrentMode: () => {},
+  setMode: () => {},
+  setThemeSettings: () => {},
 };
 
 const StateContext = createContext<IInitialState>(initialState);
@@ -39,6 +49,9 @@ type ProviderProps = {
 };
 
 export const ContextProvider = ({ children }: ProviderProps): JSX.Element => {
+  const [themeSettings, setThemeSettings] = useState<boolean>(initialState.themeSettings);
+  const [currentMode, setCurrentMode] = useState<Mode>(initialState.currentMode);
+  const [currentColor, setCurrentColor] = useState<string>(initialState.currentColor);
   const [activeMenu, setActiveMenu] = useState<boolean>(initialState.activeMenu);
   const [activeChat, setActiveChat] = useState<boolean>(initialState.activeChat);
   const [activeCart, setActiveCart] = useState<boolean>(initialState.activeCart);
@@ -48,7 +61,12 @@ export const ContextProvider = ({ children }: ProviderProps): JSX.Element => {
   const [activeUserProfile, setActiveUserProfile] = useState<boolean>(
     initialState.activeUserProfile
   );
-  const [windowSize, setWindowSize] = useState<undefined | number>(undefined);
+
+  const setMode = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.value === 'Ligth') setCurrentMode(event.target.value);
+    if (event.target.value === 'Dark') setCurrentMode(event.target.value);
+    else return;
+  };
   return (
     <StateContext.Provider
       value={{
@@ -62,8 +80,13 @@ export const ContextProvider = ({ children }: ProviderProps): JSX.Element => {
         setActiveCart,
         activeUserProfile,
         setActiveUserProfile,
-        windowSize,
-        setWindowSize,
+        currentColor,
+        setCurrentColor,
+        currentMode,
+        setCurrentMode,
+        setMode,
+        setThemeSettings,
+        themeSettings,
       }}
     >
       {children}
