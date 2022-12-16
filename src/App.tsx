@@ -20,9 +20,12 @@ import {
   Orders,
 } from './pages';
 import { useStateContext } from './contexts/ContextProvider';
+import { DashBoard } from './pages/Tickets/DashBoard';
+import { TicketPage } from './pages/Tickets/TicketPage';
 
 const App = (): JSX.Element => {
-  const { activeMenu, setThemeSettings, themeSettings, currentMode, currentColor } = useStateContext();
+  const { activeMenu, setThemeSettings, themeSettings, currentMode, currentColor } =
+    useStateContext();
   return (
     <div className={currentMode === 'Dark' ? 'dark' : ''}>
       <BrowserRouter>
@@ -60,6 +63,9 @@ const App = (): JSX.Element => {
                 {/* Dashboard */}
                 <Route path='/' element={<Ecommerce />} />
                 <Route path='/ecommerce' element={<Ecommerce />} />
+                <Route path='/dashboard' element={<DashBoard />} />
+                <Route path='/ticket' element={<TicketPage />} />
+                <Route path='/ticket/:id' element={<TicketPage />} />
                 {/* Pages */}
                 <Route path='/orders' element={<Orders />} />
                 <Route path='/employees' element={<Employee />} />
