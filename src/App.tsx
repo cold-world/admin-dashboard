@@ -7,16 +7,11 @@ import {
   Customers,
   Kanban,
   Area,
-  Bar,
-  Pie,
-  Financial,
   Editor,
   Line,
-  Pyramid,
   Calendar,
   Ecommerce,
   Employee,
-  Stacked,
   Orders,
 } from './pages';
 import { useStateContext } from './contexts/ContextProvider';
@@ -78,11 +73,6 @@ const App = (): JSX.Element => {
                 {/* Charts */}
                 <Route path='/line' element={<Line />} />
                 <Route path='/area' element={<Area />} />
-                <Route path='/bar' element={<Bar />} />
-                <Route path='/pie' element={<Pie />} />
-                <Route path='/financial' element={<Financial />} />
-                <Route path='/pyramid' element={<Pyramid />} />
-                <Route path='/stacked' element={<Stacked />} />
               </Routes>
             </div>
           </div>
