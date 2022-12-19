@@ -1,10 +1,8 @@
-import React, { useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { SiShopware } from 'react-icons/si';
 import { MdOutlineCancel } from 'react-icons/md';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 import { useStateContext } from '../contexts/ContextProvider';
-import { IconType } from 'react-icons/lib';
 import { links } from '../data/dummy';
 
 type Props = {};
