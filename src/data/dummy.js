@@ -23,6 +23,7 @@ import {
   BsShield,
   BsChatLeft,
 } from 'react-icons/bs';
+import { HiOutlineTicket } from 'react-icons/hi';
 import { BiColorFill } from 'react-icons/bi';
 import { IoMdContacts } from 'react-icons/io';
 import { RiContactsLine, RiStockLine } from 'react-icons/ri';
@@ -426,12 +427,17 @@ export const links = [
         name: 'ecommerce',
         icon: <FiShoppingBag />,
       },
+    ],
+  },
+  {
+    title: 'Tickets',
+    links: [
       {
-        name: 'Dashboard',
-        icon: <FiShoppingBag />,
+        name: 'current',
+        icon: <HiOutlineTicket />,
       },
       {
-        name: 'Ticket',
+        name: 'create-new',
         icon: <FiShoppingBag />,
       },
     ],
@@ -5635,10 +5641,10 @@ export const PyramidData = [
 export const tickets = [
   {
     category: 'Q1 2022',
-    color: 'red',
     title: 'NFT Safety 101 Video',
     owner: 'Ania Kubow',
-    avatar: 'https://www.freecodecamp.org/news/content/images/size/w60/2021/05/ania-kubow-gravatar.jpeg',
+    avatar:
+      'https://www.freecodecamp.org/news/content/images/size/w60/2021/05/ania-kubow-gravatar.jpeg',
     status: 'done',
     priority: 5,
     progress: 40,
@@ -5648,10 +5654,10 @@ export const tickets = [
   },
   {
     category: 'Q1 2022',
-    color: 'red',
     title: 'Build and Sell an AI Model',
     owner: 'Ania Kubow',
-    avatar: 'https://www.freecodecamp.org/news/content/images/size/w60/2021/05/ania-kubow-gravatar.jpeg',
+    avatar:
+      'https://www.freecodecamp.org/news/content/images/size/w60/2021/05/ania-kubow-gravatar.jpeg',
     status: 'working on it',
     priority: 4,
     progress: 20,
@@ -5661,28 +5667,25 @@ export const tickets = [
   },
   {
     category: 'Q1 2022',
-    color: 'red',
     title: 'My top tools for 2022',
     owner: 'Ania Kubow',
-    avatar: 'https://www.freecodecamp.org/news/content/images/size/w60/2021/05/ania-kubow-gravatar.jpeg',
+    avatar:
+      'https://www.freecodecamp.org/news/content/images/size/w60/2021/05/ania-kubow-gravatar.jpeg',
     status: 'stuck',
     priority: 5,
     progress: 60,
-    description:
-      'Share my top tools for 2022 with everyone in a 15 minute video.',
+    description: 'Share my top tools for 2022 with everyone in a 15 minute video.',
     timestamp: '2022-02-16T07:36:17+0000',
   },
   {
     category: 'Q2 2022',
-    color: 'blue',
     title: 'Frogger in React',
     owner: 'Ania Kubow',
     avatar: null,
     status: '',
     priority: 2,
     progress: 0,
-    description:
-      'Make a video showing how to build the popular retro game Frogger in React.',
+    description: 'Make a video showing how to build the popular retro game Frogger in React.',
     timestamp: '2022-02-21T07:36:17+0000',
   },
-]
+];

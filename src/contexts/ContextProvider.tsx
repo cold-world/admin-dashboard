@@ -11,6 +11,8 @@ interface IInitialState {
   activeUserProfile: boolean;
   activeNotification: boolean;
   activeMenu: boolean;
+  categories: string[] | null;
+  setCategories: React.Dispatch<React.SetStateAction<string[] | null>>;
   setActiveChat: React.Dispatch<React.SetStateAction<boolean>>;
   setActiveCart: React.Dispatch<React.SetStateAction<boolean>>;
   setActiveUserProfile: React.Dispatch<React.SetStateAction<boolean>>;
@@ -23,6 +25,7 @@ interface IInitialState {
 }
 
 const initialState: IInitialState = {
+  categories: null,
   themeSettings: false,
   currentMode: 'Ligth',
   currentColor: '#1A97F5',
@@ -31,6 +34,7 @@ const initialState: IInitialState = {
   activeNotification: false,
   activeUserProfile: false,
   activeMenu: false,
+  setCategories: () => {},
   setActiveChat: () => {},
   setActiveCart: () => {},
   setActiveUserProfile: () => {},
@@ -55,6 +59,7 @@ export const ContextProvider = ({ children }: ProviderProps): JSX.Element => {
   const [activeMenu, setActiveMenu] = useState<boolean>(initialState.activeMenu);
   const [activeChat, setActiveChat] = useState<boolean>(initialState.activeChat);
   const [activeCart, setActiveCart] = useState<boolean>(initialState.activeCart);
+  const [categories, setCategories] = useState<string[] | null>(initialState.categories);
   const [activeNotification, setActiveNotification] = useState<boolean>(
     initialState.activeNotification
   );
@@ -70,6 +75,8 @@ export const ContextProvider = ({ children }: ProviderProps): JSX.Element => {
   return (
     <StateContext.Provider
       value={{
+        categories,
+        setCategories,
         activeMenu,
         setActiveMenu,
         activeChat,

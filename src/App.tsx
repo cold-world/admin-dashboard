@@ -63,9 +63,10 @@ const App = (): JSX.Element => {
                 {/* Dashboard */}
                 <Route path='/' element={<Ecommerce />} />
                 <Route path='/ecommerce' element={<Ecommerce />} />
-                <Route path='/dashboard' element={<DashBoard />} />
-                <Route path='/ticket' element={<TicketPage />} />
-                <Route path='/ticket/:id' element={<TicketPage />} />
+                {/* Tickets */}
+                <Route path='/current' element={<DashBoard />} />
+                <Route path='/create-new' element={<TicketPage editMode={false}  />} />
+                <Route path='/create-new/:id' element={<TicketPage editMode={true} />} />
                 {/* Pages */}
                 <Route path='/orders' element={<Orders />} />
                 <Route path='/employees' element={<Employee />} />

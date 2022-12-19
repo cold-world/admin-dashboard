@@ -8,7 +8,7 @@ import {
   Legend,
   SplineAreaSeries,
 } from '@syncfusion/ej2-react-charts';
-import { areaCustomSeries, areaPrimaryXAxis, areaPrimaryYAxis } from '../../data/dummy';
+import { areaCustomSeries, areaPrimaryYAxis } from '../../data/dummy';
 import { useStateContext } from '../../contexts/ContextProvider';
 import { Header } from '../../components';
 type Props = {};
@@ -16,7 +16,7 @@ type Props = {};
 export const Area = (props: Props): JSX.Element => {
   const { currentMode } = useStateContext();
   return (
-    <div>
+    <div className='m-4 md:m-10 mt-24 p-10 bg-white dark:bg-secondary-dark-bg rounded-3xl'>
       <Header category='Chart' title='Area' />
       <ChartComponent
         id='line-chart'

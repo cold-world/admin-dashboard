@@ -6,7 +6,7 @@ type PriorityDisplayProps = {
 };
 
 export const PriorityDisplay = ({ priority }: PriorityDisplayProps) => {
-  const arrayFromNumber = [...Array(priority).keys()];
+  const arrayFromNumber = [...Array(+priority).keys()];
   return (
     <div className='flex space-x-4 items-center justify-center'>
       {arrayFromNumber.map((item) => (
