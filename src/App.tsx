@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 import './App.css';
@@ -28,7 +28,7 @@ const App = (): JSX.Element => {
     useStateContext();
   return (
     <div className={currentMode === 'Dark' ? 'dark' : ''}>
-      <BrowserRouter>
+      <HashRouter>
         <div className='flex relative dark:bg-main-dark-bg'>
           <div className='fixed right-4 bottom-4' style={{ zIndex: '1000' }}>
             <TooltipComponent content='Settings' position='TopCenter'>
@@ -87,7 +87,7 @@ const App = (): JSX.Element => {
             </div>
           </div>
         </div>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 };
