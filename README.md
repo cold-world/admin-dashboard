@@ -4,6 +4,7 @@ Admin dashboard.
 react, typescript, tailwind, syncfusion, node js, express, astra database.
 
 Main goal -> create admin dashboard with many features.
+
 Features ->
 
 1. Add tickets (stored to database).
